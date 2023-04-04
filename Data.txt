@@ -1,0 +1,13 @@
+test1
+testpassword1
+
+mongodb+srv://test1:testpassword1@cluster0.xvxoywj.mongodb.net/?retryWrites=true&w=majority
+mongodb+srv://test2:<password>@cluster0.4pzvcoz.mongodb.net/?retryWrites=true&w=majority
+
+CONNECTIONSTRING=
+PORT=8080
+JWTSECRET=super123secret65key
+
+CONNECTIONSTRING=mongodb://test2:testpassword2@ac-vnvj3ct-shard-00-00.4pzvcoz.mongodb.net:27017,ac-vnvj3ct-shard-00-01.4pzvcoz.mongodb.net:27017,ac-vnvj3ct-shard-00-02.4pzvcoz.mongodb.net:27017/?ssl=true&replicaSet=atlas-8tfvp0-shard-0&authSource=admin&retryWrites=true&w=majority
+PORT=8000
+JWTSECRET=super123secret65key
