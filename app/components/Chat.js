@@ -2,17 +2,15 @@ import React, { useEffect, useContext, useRef } from "react"
 import StateContext from "../StateContext"
 import DispatchContext from "../DispatchContext"
 import { useImmer } from "use-immer"
-import io from "socket.io-client"
 import { Link } from "react-router-dom"
+import io from "socket.io-client"
+const socket = io("http://localhost:8080")
 
 function Chat() {
-  const appState = useContext(StateContext)
-  const appDispatch = useContext(DispatchContext)
-
-  const socket = useRef(null)
   const chatField = useRef(null)
   const chatLog = useRef(null)
-
+  const appState = useContext(StateContext)
+  const appDispatch = useContext(DispatchContext)
   const [state, setState] = useImmer({
     fieldValue: "",
     chatMessages: []
@@ -26,15 +24,11 @@ function Chat() {
   }, [appState.isChatOpen])
 
   useEffect(() => {
-    socket.current = io(process.env.BACKENDURL || "https://reactbackend-d073.onrender.com")
-
-    socket.current.on("chatFromServer", message => {
+    socket.on("chatFromServer", message => {
       setState(draft => {
         draft.chatMessages.push(message)
       })
     })
-
-    return () => socket.current.disconnect()
   }, [])
 
   useEffect(() => {
@@ -54,9 +48,10 @@ function Chat() {
   function handleSubmit(e) {
     e.preventDefault()
     // Send message to chat server
-    socket.current.emit("chatFromBrowser", { message: state.fieldValue, token: appState.user.token })
+    socket.emit("chatFromBrowser", { message: state.fieldValue, token: appState.user.token })
 
     setState(draft => {
+      // Add message to state collection of messages
       draft.chatMessages.push({ message: draft.fieldValue, username: appState.user.username, avatar: appState.user.avatar })
       draft.fieldValue = ""
     })

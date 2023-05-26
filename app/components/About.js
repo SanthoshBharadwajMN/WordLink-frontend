@@ -10,9 +10,9 @@ function About() {
   return (
     <Page title="About Us">
       <h2>About Us</h2>
-      <p className="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolorum labore quisquam vel id dicta fuga! Ducimus, quo. Dolore commodi aliquid error veritatis consequuntur, excepturi cumque fuga eum incidunt doloremque?</p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At qui enim rem totam voluptatum. Aut saepe temporibus, facilis ex a iste expedita minima dolorum dicta doloribus libero aliquid, quae maxime? Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat suscipit beatae eum, est soluta ducimus ratione et impedit sapiente, nihil, atque dignissimos adipisci? Totam atque officia quis voluptates sed veniam?</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptates quisquam possimus tenetur, dicta enim rerum quis, quaerat id nobis provident quo dolorum sapiente temporibus facere non repellendus consequatur cupiditate!</p>
+      <p className="lead text-muted">Welcome to WordLink, the premier social media platform for connecting and communicating with people using the power of the written word.</p>
+      <p>We believe in the power of language to bring people together, to inspire and to provoke thought. We provide a platform where people can share their thoughts, ideas, and opinions with others in a safe, supportive environment. We understand that sometimes, the best way to express ourselves is through the written word, and we want to provide a space where people can do that freely and without distraction.</p>
+      <p>Join our community of like-minded individuals, writers, journalists, and thought-leaders who believe in the power of words. Start sharing your thoughts, ideas, and opinions today and connect with people on a deeper level.</p>
     </Page>
   )
 }
